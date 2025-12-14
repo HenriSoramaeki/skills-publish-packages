@@ -24,7 +24,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: false
-          tags: ghcr.io/${{ github.repository_owner }}/skills-publish-packages:ci
+          tags: ghcr.io/henrisoramaeki/publish-packages/game:ci
 
   publish:
     needs: build
@@ -40,7 +40,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository_owner }}/skills-publish-packages/game
+          images: ghcr.io/henrisoramaeki/publish-packages/game
           tags: |
             type=sha
             type=raw,value=latest
